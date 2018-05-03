@@ -61,18 +61,32 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-html,body,div,p,ul,li{
+html,body,div,p,ul,li,h1{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+ul{
+  list-style: none;
+}
+html{
+  height: 100%;
+  background: #efefef;
+}
+body{
+  width: 10rem;
+  margin: 0 auto;
+  background: #f8f8f8;
+  height: 100%;
+  position: relative;
+}
 @font-face {
   font-family: 'iconfont';  /* project id 650031 */
-  src: url('//at.alicdn.com/t/font_650031_w3prytxhlso1dcxr.eot');
-  src: url('//at.alicdn.com/t/font_650031_w3prytxhlso1dcxr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_650031_w3prytxhlso1dcxr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_650031_w3prytxhlso1dcxr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_650031_w3prytxhlso1dcxr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.eot');
+  src: url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.svg#iconfont') format('svg');
 }
 .icon{
   font-family: 'iconfont';
@@ -81,7 +95,7 @@ html,body,div,p,ul,li{
 .footer{
   height: 1.28rem;
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   background: #fff;
@@ -101,4 +115,39 @@ html,body,div,p,ul,li{
 .footer i{
   font-size: 0.533333rem;
 }
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+  margin: 0 1px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: -0.213333rem;
+}
+.swiper-pagination-bullet{
+  width:18px;
+  height: 2px;
+  border-radius: 0;
+  background: #fff;
+  opacity: 0.6;
+}
+.white-bullet-active{
+  opacity: 1;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .menu-bullet{
+  margin: 0 1px;
+}
+.swiper-container-horizontal > .menu-bullet{
+  bottom: -0.213333rem;
+}
+.menu-bullet{
+  background: #000;
+  width:18px;
+  height: 2px;
+  display: inline-block;
+  border-radius: 0;
+  background: #000;
+  opacity: 0.1;
+}
+.menu-white-bullet-active{
+  opacity: 0.4;
+}
+
 </style>
