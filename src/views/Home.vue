@@ -32,12 +32,54 @@
 
 				<div class="content-box">
 					<img src="//img.alicdn.com/tfs/TB1gmzZpeySBuNjy1zdXXXPxFXa-1125-240.gif?getAvatar=1" alt="">
-
+				</div>
+				
+				<div class="content-box padblr10 pt40">
+					<h1><span>超市必买</span><span>SELECTED</span></h1>
+					<div class="channel">
+						<div class="left">
+							<div class="channel-item channel-item1">
+								<p class="left-title">今日疯抢</p>
+								<p class="left-con">9点场剩余时间</p>
+								<p><span>01</span>:<span>12</span>:<span>56</span></p>
+							</div>
+							<div class="channel-item">
+								<img class="a" src="//img.alicdn.com/tps/i4/TB1nHxyeAUmBKNjSZFOwu1b2XXa.png_400x400Q50s50.jpg_.webp" alt="">
+							</div>
+							<span class="yiyuan">1元起</span>
+						</div>
+						<div class="right">
+							<div class="right-top">
+								<p class="right-title">有好货</p>
+								<p class="right-con">鸡蛋松糕饼</p>
+								<p class="right-con c1">波兰进口</p>
+								<span class="nice n1">独特表情包</span>	
+								<img src="//img.alicdn.com/tfs/TB11wwzpXOWBuNjy0FiXXXFxVXa-345-345.png_230x230Q90s50.jpg_.webp" alt="">
+							</div>
+							<div class="right-bottom">
+								<p class="right-title">量贩装</p>
+								<p class="right-con">心相印心柔</p>
+								<p class="right-con c2">2件减10</p>
+								<span class="nice n2">热卖70291</span>
+								<img src="//img.alicdn.com/tfs/TB1VExUdFOWBuNjy0FiXXXFxVXa-345-297.png_230x230Q90s50.jpg_.webp" alt="">
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="content-box padblr10">
-					<h1><span>超市必买</span><span>SELECTED</span></h1>
+					<h1><span>品牌精选</span><span>SHOWTIME</span></h1>
 					<img src="//img.alicdn.com/tfs/TB12l6npXuWBuNjSszbXXcS7FXa-1035-447.png_760x760Q90s50.jpg_.webp" alt="">
+					<div class="low_price">
+						<div><img class="limg" src="//img.alicdn.com/simba/img/TB1JAKSoL1TBuNjy0FjSuujyXXa.jpg_270x270Q75s50.jpg_.webp" alt=""></div>
+						<div><img class="limg" src="//img.alicdn.com/simba/img/TB1P_nBoH1YBuNjSszeSuublFXa.jpg_270x270Q75s50.jpg_.webp" alt=""></div>
+						<div><img class="limg" src="//img.alicdn.com/imgextra/i1/2454638901/TB2afFdoAOWBuNjSsppXXXPgpXa_!!2454638901.jpg_270x270Q75s50.jpg_.webp" alt=""></div>
+					</div>
+				</div>
+
+				<div class="content-box pt40">
+					<h1><span>金榜题名</span><span>HOTLISTS</span></h1>
+					
 				</div>
 			</div>
 			
@@ -63,87 +105,7 @@ import BScroll from 'better-scroll'
 					"//img.alicdn.com/tfs/TB1VN1QoMmTBuNjy1XbXXaMrVXa-1125-807.jpg_970x970Q90s50.jpg_.webp"
 				],
 				menu_list:[
-					[
-					{
-						img:"//img.alicdn.com/tfs/TB15IWNlKOSBuNjy0FdXXbDnVXa-168-168.png_170x120Q90s50.jpg_.webp",
-						text:"生鲜水果"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1kMWChhWYBuNjy1zkSutGGpXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"休闲零食"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1uqxzdb3nBKNjSZFMSuuUSFXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"奶品水饮"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1mFaJcnCWBKNjSZFtSuuC3FXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"粮油厨房"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1OMFQhXmWBuNjSspdSuvugXXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"家用电器"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB14SqehXuWBuNjSspnSut1NVXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"母婴用品"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1FzTLhmtYBeNjSspkSuvU8VXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"个人护理"
-					},
-					{
-						img:'//img.alicdn.com/tps/i4/TB1U1yXhkOWBuNjSsppSutPgpXa.jpg_170x120Q90s50.jpg_.webp',
-						text:'家具清洁'
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1DiCOib5YBuNjSspoSuveNFXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"进口好货"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1.rRCdOMnBKNjSZFzSuw_qVXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"夏日精选"
-					}],[
-					{
-						img:"//img.alicdn.com/tps/i4/TB1mBlZcoOWBKNjSZKzSutfWFXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'中外名酒'
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1nL89hXGWBuNjy0FbSuv4sXXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'收纳日用'
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1pBXxbVkoBKNjSZFkSuv4tFXa.jpg_170x120Q90s50.jpg_.webp",
-						text:"滋补保健",
-					},
-					{
-						img:'//img.alicdn.com/tps/i4/TB1upBwb8jTBKNjSZFDSuvVgVXa.jpg_170x120Q90s50.jpg_.webp',
-						text:"家访内衣"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB10hqXhkOWBuNjSsppSutPgpXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'宠物用品'
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1bpjmXljTBKNjSZFNSuusFXXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'方便速食'
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1ywt3b_mWBKNjSZFBSutxUFXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'成人用品'
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB18gEyXpuWBuNjSszbSuwS7FXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'美容护肤'
-					},
-					{
-						img:'//img.alicdn.com/tps/i4/TB1yd__drZnBKNjSZFGSuvt3FXa.jpg_170x120Q90s50.jpg_.webp',
-						text:"3C汽配"
-					},
-					{
-						img:"//img.alicdn.com/tps/i4/TB1yd__drZnBKNjSZFGSuvt3FXa.jpg_170x120Q90s50.jpg_.webp",
-						text:'文具体育'
-					}]
+					
 				],
 				swiperOption: {
 				  // 循环播放
@@ -190,6 +152,21 @@ import BScroll from 'better-scroll'
 			menuSwiper(){
 				return this.$refs.menuSwiper.swiper;
 			}
+		},
+		methods:{
+			getMenuList(){
+				this.$http.get("https://www.easy-mock.com/mock/5aebeec1d6bbb07214b7b06e/tmall/getMenuList")
+				.then(res=>{
+					//console.log(res.data.data);
+					this.menu_list = res.data.data.menu_list;
+				})
+				.catch(error=>{
+					console.log(error);
+				})
+			}
+		},
+		created(){
+			this.getMenuList();
 		},
 		mounted(){
 			var _this = this;
@@ -240,9 +217,11 @@ import BScroll from 'better-scroll'
 	font-size: 0.64rem;
 	color: #fff;
 	box-sizing: content-box;
+	background-color: rgba(255,255,255,0);
+	transition: all 0.3s;
 }
 .white-home-header{
-	background: #fff;
+	background-color: rgba(255,255,255,1);
 	border-bottom: 1px solid #f1f1f1;
 }
 .home-header .pos{
@@ -279,6 +258,7 @@ import BScroll from 'better-scroll'
 	left: 0;
 	right: 0;
 	bottom: 1.28rem;
+	overflow: auto;
 }
 .menu{
 	width: 100%;
@@ -307,7 +287,7 @@ import BScroll from 'better-scroll'
 	background: #fff;
 	position: relative;
 }
-.content-box img{
+.content-box>img{
 	vertical-align: top;
 	width: 100%;
 	height: auto;
@@ -351,7 +331,147 @@ import BScroll from 'better-scroll'
 	left: 1.173333rem;
 	right: 1.173333rem;
 	top: 0.213333rem;
-	background: #e1e1e1;
+	background: #f1f1f1;
+}
+.left{
+	width: 40%;
+	background: linear-gradient(90deg, #FFEAE5, #FFF6F3);
+	position: relative;
+	font-size: 12px;
+}
+.left>img{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.left:before{
+	content: '';
+	display: block;
+	padding-top: 144.3%;
+}
+.pt40{
+	padding-top: 1.066667rem;
+}
+.channel{
+	display: flex;
+}
+.right{
+	flex: 1;
+	display: flex;
+	margin-left: 2px;
+	flex-direction: column;
+}
+.right>div{
+	flex: 1;
+	width: 100%;
+	position: relative;
+	padding: 0.266667rem;
+	font-size: 12px;
+}
+.right img{
+	height: 100%;
+	width: auto;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.right-top{
+	margin-bottom: 2px;
+	background: linear-gradient(90deg, #E1F8FF, #F6FDFF);
+}
+.right-bottom{
+	background: linear-gradient(90deg, #E5E9F8, #F4F6FC);
+}
+.channel-item{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.channel-item .a{
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+.channel-item1{
+	padding-top: 0.266667rem;
+	padding-left: 0.266667rem;
+}
+.channel-item1 .left-title{
+	font-size: 0.373333rem;
+	font-weight: bold;
+	color: #ff4246;
+}
+.channel-item1>p:nth-child(3){
+	font-size: 0.373333rem;
+	color: #dd2727;
+	font-weight: bold;
+	margin-top: 2px;
+}
+.channel-item1>p:nth-child(3) span{
+	color: #fff;
+	background: #dd2727;
+	border-radius: 2px;
+	padding: 0 1px;
+}
+.yiyuan{
+	color: #fff;
+	background: #ff4246;
+	height: 1.066667rem;
+	width: 1.066667rem;
+	border-radius: 0.533333rem;
+	position: absolute;
+	right: 0.266667rem;
+	top: 30%;
+	font-weight:bold;
+	line-height: 1.066667rem;
+	text-align: center;
+}
+.right-title{
+	font-size: 14px;
+	font-weight: bold;
+	color: #3d4245;
+}
+.right-con{
+	color: #666;
+	font-weight: bold;
+}
+.c1{
+	color: #87cde1;
+}
+.c2{
+	color: #a9acd7;
+}
+.nice{
+	position: absolute;
+	left: 0.266667rem;
+	bottom: 0.266667rem;
+	color: #fff;
+	font-weight: bold;
+	padding: 0 4px;
+	border-radius: 4px;
+}
+.n1{
+	background: #87cde1;
+}
+.n2{
+	background: #a9acd7;
+}
+.low_price{
+	display: flex;
+	margin-top: 4px;
+}
+.low_price>div{
+	flex: 1;
+}
+.low_price>div:nth-child(2){
+	margin: 0 2px;
+}
+.low_price>div .limg{
+	width: 100%;
+	height: auto;
+	vertical-align: top;
 }
 
 </style>

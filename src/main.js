@@ -6,6 +6,21 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+
+import axios from 'axios'
+Vue.prototype.$http = axios
+
+import VueLazyload from 'vue-lazyload'
+ 
+Vue.use(VueLazyload)
+
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: '',
+  loading: '',
+  attempt: 1
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

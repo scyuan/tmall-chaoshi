@@ -88,6 +88,13 @@ body{
   url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_650031_6wm8usfcx2m7k3xr.svg#iconfont') format('svg');
 }
+.clearfix:after{
+  content: '';
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  display: block;
+}
 .icon{
   font-family: 'iconfont';
   font-style: normal;
