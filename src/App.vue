@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-
+    <keep-alive>
+        <router-view></router-view>
+    </keep-alive>
     <footer class="footer">
 
       <div v-for='(item,index) in footer_menu_list' class="footer-menu" :class='{"footer_active":footer_active_index == index}' @click='go(index)'>
@@ -66,7 +67,7 @@ html,body,div,p,ul,li,h1{
   padding: 0;
   box-sizing: border-box;
 }
-ul{
+ul,li{
   list-style: none;
 }
 html{
@@ -156,5 +157,11 @@ body{
 .menu-white-bullet-active{
   opacity: 0.4;
 }
-
+.clearfix:after{
+  content: '';
+  height:0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
 </style>

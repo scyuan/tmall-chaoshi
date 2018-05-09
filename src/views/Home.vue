@@ -16,6 +16,7 @@
 					</swiper-slide>
 					<div class="swiper-pagination" slot="pagination"></div> 
 				</swiper>
+				
 				<swiper :options="swiperOption1"  ref="menuSwiper">
 					<swiper-slide v-for='list in menu_list'>
 						<div class="menu">
@@ -29,6 +30,7 @@
 					</swiper-slide>
 					<div class="swiper-pagination" slot="pagination"></div> 
 				</swiper>
+				
 
 				<div class="content-box">
 					<img src="//img.alicdn.com/tfs/TB1gmzZpeySBuNjy1zdXXXPxFXa-1125-240.gif?getAvatar=1" alt="">
@@ -79,6 +81,28 @@
 
 				<div class="content-box pt40">
 					<h1><span>金榜题名</span><span>HOTLISTS</span></h1>
+					<header class="xian"></header>
+					<hot-list-item 
+						v-for='(item , index) in hot_list' 
+						:class='{ "pb10":index === (hot_list.length-1)}' 
+						:title='item.title' 
+						:list='item.list'>
+					</hot-list-item>
+				</div>
+
+
+				<div class="content-box pt40">
+					<h1><span>猜你喜欢</span><span>EXPLORE</span></h1>
+					
+					<div class="box_wrapper clearfix">
+						
+						<guess-like-item 
+							v-for='item in guess_like_list'
+							width='33.33%'
+							:item='item'
+						></guess-like-item>
+						
+					</div>
 					
 				</div>
 			</div>
@@ -92,10 +116,17 @@
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import BScroll from 'better-scroll'
+import hotListItem from '@/components/hot-list-item'
+import guessLikeItem from '@/components/guess-like-item'
 	export default{
 		data(){
 			return{
+				hot_list:null,
+				
 				white_header:false,
+
+				guess_like_list:null,
+
 				lunbo:[
 					"//img.alicdn.com/tfs/TB1hiq4oKSSBuNjy0FlXXbBpVXa-1125-807.jpg_970x970Q90s50.jpg_.webp",
 					"//img.alicdn.com/tfs/TB1iRWFoHGYBuNjy0FoXXciBFXa-1125-807.jpg_970x970Q90s50.jpg_.webp",
@@ -143,7 +174,7 @@ import BScroll from 'better-scroll'
 			}
 		},
 		components:{
-			swiper, swiperSlide
+			swiper, swiperSlide,hotListItem,guessLikeItem
 		},
 		computed:{
 			swiper(){
@@ -157,16 +188,32 @@ import BScroll from 'better-scroll'
 			getMenuList(){
 				this.$http.get("https://www.easy-mock.com/mock/5aebeec1d6bbb07214b7b06e/tmall/getMenuList")
 				.then(res=>{
-					//console.log(res.data.data);
+					console.log(res.data.data);
 					this.menu_list = res.data.data.menu_list;
 				})
 				.catch(error=>{
 					console.log(error);
 				})
+			},
+			getHotList(){
+				this.$http.get("https://www.easy-mock.com/mock/5aebeec1d6bbb07214b7b06e/tmall/getHotList")
+				.then(res=>{
+					console.log(res.data);
+					this.hot_list = res.data.data.hot_list;
+				})
+			},
+			getGuessLikeList(){
+				this.$http.get("https://www.easy-mock.com/mock/5aebeec1d6bbb07214b7b06e/tmall/getLikeLiast")
+				.then(res=>{
+					console.log(res.data);
+					this.guess_like_list = res.data.data.guess_like_list;
+				})
 			}
 		},
 		created(){
 			this.getMenuList();
+			this.getHotList();
+			this.getGuessLikeList();
 		},
 		mounted(){
 			var _this = this;
@@ -180,6 +227,10 @@ import BScroll from 'better-scroll'
 						  bottom: true,
 						  left: true,
 						  right: true
+						},
+						preventDefaultException:{
+
+							className: /(^|\s)originscroll(\s|$)/
 						}
 					})
 				}else{
@@ -473,5 +524,25 @@ import BScroll from 'better-scroll'
 	height: auto;
 	vertical-align: top;
 }
-
+.pt30{
+	padding-top: 0.8rem;
+}
+.xian{
+	margin-left: 0.266667rem;
+	height: 1px;
+	background: #f1f1f1;
+}
+.pb10{
+	padding-bottom: 0.266667rem;
+}
+.box_wrapper{
+	border-top: 1px solid #f1f1f1;
+}
+.box_wrapper>div:nth-child(3n+1),.box_wrapper>div:nth-child(3n+2){
+	border-right: 1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
+}
+.box_wrapper>div:nth-child(3n){
+	border-bottom: 1px solid #f1f1f1;
+}
 </style>
