@@ -227,10 +227,6 @@ import guessLikeItem from '@/components/guess-like-item'
 						  bottom: true,
 						  left: true,
 						  right: true
-						},
-						preventDefaultException:{
-
-							className: /(^|\s)originscroll(\s|$)/
 						}
 					})
 				}else{
