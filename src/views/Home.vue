@@ -141,6 +141,7 @@ import guessLikeItem from '@/components/guess-like-item'
 				swiperOption: {
 				  // 循环播放
 				  loop:true,
+
 				  // 自动播放
 				  autoplay:{
 				    stopOnLastSlide:false,
@@ -162,6 +163,7 @@ import guessLikeItem from '@/components/guess-like-item'
 				  loop:true,
 				  // 最左最右禁止滑动
 				  resistanceRatio : 0,
+
 				  // 配置小圆点
 				  pagination:{
 				    el:'.swiper-pagination',
