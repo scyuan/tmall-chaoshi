@@ -179,8 +179,12 @@ import BScroll from 'better-scroll';
 			}
 		},
 		created(){
-			window.addEventListener('scroll',function(){
-				console.log('kk')
+			var _this = this;
+			window.addEventListener('scroll',function(e){
+
+				console.log(e.target.scrollTop);
+				//_this.scroll.scrollTo(0,-e.target.scrollTop,0.1);
+				//_this.scroll.refresh();
 			},true)
 		},
 		mounted(){
@@ -189,7 +193,7 @@ import BScroll from 'better-scroll';
 				if(!_this.scroll){
 					_this.scroll = new BScroll(_this.$refs.scroll,{
 						click:true,
-						probeType:3,
+						probeType:2,
 						bounce: {
 						  top: false,
 						  bottom: true,
@@ -269,12 +273,12 @@ import BScroll from 'better-scroll';
 	right: 0;
 }
 .flop-content{
-	/*position: absolute;
+	position: absolute;
 	left: 0;
 	right: 0;
 	top: 1.173333rem;
 	bottom: 1.28rem;
-	overflow: auto;*/
+	overflow: auto;
 }
 .flop-tip{
 	color: #000;

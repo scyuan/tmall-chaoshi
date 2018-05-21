@@ -73,8 +73,40 @@ better-scroll 也是一样的原理，我们可以用一张图更直观的感受
 
 因为滚动原理是控制content的transiformX来控制的。
 
+**PS:**滚动是通过修改transformX 初始化的时候应该会计算transformX的范围。比如刚进去某个页面transformX的范围是0~-200px（向下滑动减小）。当双指首先滑到-50px时，这个时候content的transformX=0px;这个时候如果单指的话是无法向上滑动的，智能向下滑动200px；（但其实按理说这个时候已经滑动了50px。这个时候只能再向下滑150px。但是better-scroll并不知道，所以还能像下滑动200px）。这样导致不能上滑动，下滑动会超出范围，导致演示bug。
+
 因为我喜欢设置外层的wrapper  overflow:auto。导致可以双指滑动，如果设置为overflow:hidden的话，则不能双指滑动，只能单指滑动，这样是肯定不行的。需要去解决兼容问题。
 
+目前问题二是比较难解决的。
+
+#### 解决问题二的方案：
+
+外层wrapper设置overflow:hidden；
+
+#### 解决问题一的方案：
+
+双指滑动时，可以在created()里面
+
+```JavaScript
+window.addEventListener('scroll',function(e){
+	// 做你的事情
+	// 第三个参数设置为 true,不然不行,原因我也不知道
+	...
+},true)
+```
+
+```JavaScript
+_this.scroll.on('scroll',function(pos){
+	if(pos.y<-30){
+		_this.white_header = true;
+	}
+	if(pos.y>= -30){
+		_this.white_header = false;
+	}
+});
+```
+
+但是！你这样解决的方案还是无法解决问题二，所以问题二还是存在！所以根本所在还是要解决问题二
 
 
 
