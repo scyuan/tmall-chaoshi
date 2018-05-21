@@ -6,7 +6,7 @@
 			<i class="icon icon-search">&#xe650;</i>
 			<i class="icon icon-shopcart">&#xe620;</i>
 		</div>
-		<div class="flop-content">
+		<div class="flop-content" ref='scroll'>
 			<div class="content">
 				<div class="flop-tip">
 					<div class="more-flop"></div>
@@ -26,7 +26,9 @@
 						</div>
 						<div class="lottery-content">
 							<div>
-								<div class="lottery-view">
+								<transition-group :name='lotter_slide'>
+								
+								<div class="lottery-view" v-for='(item,index) in tab_items' v-show='index === tab_index' v-bind:key='index'>
 									<div class="lottery-row">
 										<div class="lottery-row-item">
 											<div class="img-wrap">
@@ -121,10 +123,22 @@
 									
 
 								</div>
+								
+								</transition-group>
 							</div>
 						</div>
 					</div>
 
+				</div>
+				
+				<div class="brand-activity">
+					<div class="brand-h">
+						<span><i class="icon">&#xe60e;</i>品牌活动</span>
+						<span>查看更多<i class="icon">&#xe617;</i></span>
+					</div>
+					<div class="brand-img">
+						<img src="//img.alicdn.com/imgextra/i1/3232480197/TB2n47bqStYBeNjSspaXXaOOFXa_!!3232480197.jpg_2200x2200Q50s50.jpg_.webp" alt="">
+					</div>
 				</div>
 
 			</div>
@@ -134,23 +148,88 @@
 	</div>
 </template>
 <script>
+import BScroll from 'better-scroll';
 	export default{
 		data(){
 			return {
+				lotter_slide:'lottery-slide-left',
 				tab_index:0,
 				tab_items:[
 					"超值组合","品牌组合","生鲜组合"
 				]
 			}
 		},
+		watch:{
+			'tab_index':function(new_val,old_val) {
+				console.log(new_val,old_val);
+				if(new_val > old_val){
+					this.lotter_slide = 'lottery-slide-left';
+				}else{
+					this.lotter_slide = 'lottery-slide-right';
+				}
+			}
+		},
+		
 		methods:{
 			tab(index){
 				this.tab_index = index;
+			},
+			scoll(){
+				console.log(new Date());
 			}
+		},
+		created(){
+			window.addEventListener('scroll',function(){
+				console.log('kk')
+			},true)
+		},
+		mounted(){
+			var _this = this;
+			_this.$nextTick(()=>{
+				if(!_this.scroll){
+					_this.scroll = new BScroll(_this.$refs.scroll,{
+						click:true,
+						probeType:3,
+						bounce: {
+						  top: false,
+						  bottom: true,
+						  left: true,
+						  right: true
+						}
+					})
+				}else{
+					_this.scroll.refresh();
+				}
+				_this.scroll.on('scroll',function(pos){
+					console.log(pos);
+				});
+
+			})
 		}
 	}
 </script>
 <style scoped>
+.lottery-slide-left-leave,.lottery-slide-left-enter-to{
+	transform: translateX(0%);
+}
+.lottery-slide-left-leave-to{
+	transform: translateX(-100%);
+}
+.lottery-slide-left-enter{
+	transform: translateX(100%);
+}
+.lottery-slide-left-leave-active,.lottery-slide-left-enter-active,.lottery-slide-right-enter-active,.lottery-slide-right-leave-active{
+	transition: all 0.3s;
+}
+.lottery-slide-right-enter{
+	transform: translateX(-100%);
+}
+.lottery-slide-right-leave-to{
+	transform: translateX(100%);
+}
+.lottery-slide-right-enter-to,.lottery-slide-right-leave{
+	transform: translateX(0);
+}
 .flop-header{
 	height: 1.173333rem;
 	box-sizing: border-box;
@@ -190,12 +269,12 @@
 	right: 0;
 }
 .flop-content{
-	position: absolute;
+	/*position: absolute;
 	left: 0;
 	right: 0;
 	top: 1.173333rem;
 	bottom: 1.28rem;
-	overflow: auto;
+	overflow: auto;*/
 }
 .flop-tip{
 	color: #000;
@@ -280,7 +359,20 @@
 }
 .lottery-content>div{
 	overflow: hidden;
+	position: relative;
 }
+.lottery-content>div::before{
+	content: '';
+	display: block;
+	padding-top: 127%;
+}
+.lottery-view{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
 .lottery-row{
 	display: flex;
 	margin-bottom: 6px;
@@ -315,6 +407,7 @@
 	display: block;
 	padding-top: 95%;
 }
+
 .lottery-row-item p{
 	font-size: 0.32rem;
 	padding: 0 6px;
@@ -414,5 +507,32 @@
 	font-size: 0.373333rem;
 	text-decoration: underline;
 	padding-top: 0.133333rem;
+}
+.brand-activity{
+	background: #fff;
+	margin-top: 0.4rem;
+}
+.brand-h>span:nth-child(2){
+	float: right;
+}
+.brand-h>span:nth-child(1){
+	font-size: 0.426667rem;
+	color: #000;
+}
+.brand-h{
+	padding: 0 0.266667rem;
+	height: 1.173333rem;
+	line-height: 1.173333rem;
+	font-size: 0.32rem;
+	color: #1189F8;
+	box-sizing: content-box;
+	border-bottom: 1px solid #f1f1f1;
+}
+.brand-img{
+	padding: 0.266667rem;
+}
+.brand-img img{
+	width: 100%;
+	height: auto;
 }
 </style>
